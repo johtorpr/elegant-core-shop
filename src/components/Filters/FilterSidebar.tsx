@@ -120,7 +120,7 @@ export const FilterSidebar = ({
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
               <Filter className="h-5 w-5 text-foreground" />
-              <h2 className="text-lg font-semibold text-foreground">Filtros</h2>
+              <h2 className="text-lg font-bold text-primary">Filtros de Zapatillas</h2>
             </div>
             <div className="flex items-center gap-2">
               {hasActiveFilters && (
@@ -146,7 +146,7 @@ export const FilterSidebar = ({
               onClick={() => toggleSection('categories')}
               className="flex items-center justify-between w-full mb-3 text-left"
             >
-              <h3 className="font-medium text-foreground">Categorías</h3>
+              <h3 className="font-semibold text-secondary">Tipos</h3>
               {expandedSections.categories ? (
                 <ChevronUp className="h-4 w-4 text-muted-foreground" />
               ) : (
@@ -156,14 +156,14 @@ export const FilterSidebar = ({
             {expandedSections.categories && (
               <div className="space-y-2">
                 {filters.categories.map((category) => (
-                  <label key={category} className="flex items-center space-x-2 cursor-pointer">
+                  <label key={category} className="flex items-center space-x-2 cursor-pointer group hover:bg-muted/50 p-2 rounded-md transition-colors">
                     <input
                       type="checkbox"
                       checked={activeFilters.categories.includes(category)}
                       onChange={() => handleCategoryChange(category)}
-                      className="w-4 h-4 text-primary bg-background border-border rounded focus:ring-ring"
+                      className="w-4 h-4 text-primary bg-background border-border rounded focus:ring-primary"
                     />
-                    <span className="text-sm text-foreground">{category}</span>
+                    <span className="text-sm text-foreground group-hover:text-primary transition-colors font-medium">{category}</span>
                   </label>
                 ))}
               </div>
@@ -176,7 +176,7 @@ export const FilterSidebar = ({
               onClick={() => toggleSection('brands')}
               className="flex items-center justify-between w-full mb-3 text-left"
             >
-              <h3 className="font-medium text-foreground">Marcas</h3>
+              <h3 className="font-semibold text-secondary">Marcas</h3>
               {expandedSections.brands ? (
                 <ChevronUp className="h-4 w-4 text-muted-foreground" />
               ) : (
@@ -186,14 +186,14 @@ export const FilterSidebar = ({
             {expandedSections.brands && (
               <div className="space-y-2">
                 {filters.brands.map((brand) => (
-                  <label key={brand} className="flex items-center space-x-2 cursor-pointer">
+                  <label key={brand} className="flex items-center space-x-2 cursor-pointer group hover:bg-muted/50 p-2 rounded-md transition-colors">
                     <input
                       type="checkbox"
                       checked={activeFilters.brands.includes(brand)}
                       onChange={() => handleBrandChange(brand)}
-                      className="w-4 h-4 text-primary bg-background border-border rounded focus:ring-ring"
+                      className="w-4 h-4 text-primary bg-background border-border rounded focus:ring-primary"
                     />
-                    <span className="text-sm text-foreground">{brand}</span>
+                    <span className="text-sm text-foreground group-hover:text-primary transition-colors font-medium">{brand}</span>
                   </label>
                 ))}
               </div>
@@ -206,7 +206,7 @@ export const FilterSidebar = ({
               onClick={() => toggleSection('price')}
               className="flex items-center justify-between w-full mb-3 text-left"
             >
-              <h3 className="font-medium text-foreground">Precio</h3>
+              <h3 className="font-semibold text-secondary">Precio</h3>
               {expandedSections.price ? (
                 <ChevronUp className="h-4 w-4 text-muted-foreground" />
               ) : (
@@ -247,7 +247,7 @@ export const FilterSidebar = ({
               onClick={() => toggleSection('availability')}
               className="flex items-center justify-between w-full mb-3 text-left"
             >
-              <h3 className="font-medium text-foreground">Disponibilidad</h3>
+              <h3 className="font-semibold text-secondary">Disponibilidad</h3>
               {expandedSections.availability ? (
                 <ChevronUp className="h-4 w-4 text-muted-foreground" />
               ) : (
@@ -257,14 +257,14 @@ export const FilterSidebar = ({
             {expandedSections.availability && (
               <div className="space-y-2">
                 {availabilityOptions.map((option) => (
-                  <label key={option.value} className="flex items-center space-x-2 cursor-pointer">
+                  <label key={option.value} className="flex items-center space-x-2 cursor-pointer group hover:bg-muted/50 p-2 rounded-md transition-colors">
                     <input
                       type="checkbox"
                       checked={activeFilters.availability.includes(option.value)}
                       onChange={() => handleAvailabilityChange(option.value)}
-                      className="w-4 h-4 text-primary bg-background border-border rounded focus:ring-ring"
+                      className="w-4 h-4 text-primary bg-background border-border rounded focus:ring-primary"
                     />
-                    <span className="text-sm text-foreground">{option.label}</span>
+                    <span className="text-sm text-foreground group-hover:text-primary transition-colors font-medium">{option.label}</span>
                   </label>
                 ))}
               </div>

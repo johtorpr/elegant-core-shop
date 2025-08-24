@@ -154,10 +154,10 @@ export const ProductCard = ({ product, onQuickView }: ProductCardProps) => {
         <button
           onClick={handleAddToCart}
           disabled={product.availability === 'out-of-stock' || isLoading}
-          className={`w-full flex items-center justify-center gap-2 py-2 px-4 rounded-lg font-medium transition-all duration-200 ${
+          className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-200 shadow-lg ${
             product.availability === 'out-of-stock'
               ? 'bg-muted text-muted-foreground cursor-not-allowed'
-              : 'btn-primary hover:scale-105'
+              : 'bg-primary text-primary-foreground hover:bg-primary-hover hover:scale-105'
           }`}
         >
           <ShoppingCart className="h-4 w-4" />

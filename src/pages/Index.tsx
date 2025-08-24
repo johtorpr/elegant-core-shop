@@ -18,14 +18,16 @@ const Index = () => {
   const [activeFilters, setActiveFilters] = useState({
     categories: [] as string[],
     brands: [] as string[],
-    priceRange: { min: 0, max: 2000 },
+    priceRange: { min: 0, max: 300 },
     availability: [] as string[]
   });
 
+  const sneakerTypes = Array.from(new Set(mockProducts.map(p => p.type)));
+  
   const filterOptions: FilterOptions = {
-    categories,
+    categories: sneakerTypes,
     brands,
-    priceRange: { min: 0, max: 2000 },
+    priceRange: { min: 0, max: 300 },
     availability: ['in-stock', 'limited', 'out-of-stock']
   };
 
@@ -35,12 +37,12 @@ const Index = () => {
       // Search filter
       if (searchQuery && !product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
           !product.brand.toLowerCase().includes(searchQuery.toLowerCase()) &&
-          !product.category.toLowerCase().includes(searchQuery.toLowerCase())) {
+          !product.type.toLowerCase().includes(searchQuery.toLowerCase())) {
         return false;
       }
 
-      // Category filter
-      if (activeFilters.categories.length > 0 && !activeFilters.categories.includes(product.category)) {
+      // Type filter (categories are actually types now)
+      if (activeFilters.categories.length > 0 && !activeFilters.categories.includes(product.type)) {
         return false;
       }
 
@@ -123,8 +125,8 @@ const Index = () => {
                   Filtros
                 </button>
                 
-                <span className="text-sm text-muted-foreground">
-                  {filteredProducts.length} productos encontrados
+                <span className="text-sm text-muted-foreground font-medium">
+                  {filteredProducts.length} zapatillas encontradas
                 </span>
               </div>
 

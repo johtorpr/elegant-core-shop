@@ -31,7 +31,7 @@ export const Header = ({ onSearchChange, onCartClick, onMenuClick }: HeaderProps
               <Menu className="h-5 w-5" />
             </button>
             <h1 className="text-xl font-bold text-foreground">
-              Elegant<span className="text-muted-foreground">Store</span>
+              Sneaker<span className="text-primary">Hub</span>
             </h1>
           </div>
 
@@ -41,7 +41,7 @@ export const Header = ({ onSearchChange, onCartClick, onMenuClick }: HeaderProps
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Buscar productos..."
+                placeholder="Buscar zapatillas..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className="search-input w-full pl-10"
@@ -67,11 +67,11 @@ export const Header = ({ onSearchChange, onCartClick, onMenuClick }: HeaderProps
             {/* Cart */}
             <button
               onClick={onCartClick}
-              className="btn-ghost p-2 relative"
+              className="bg-primary text-primary-foreground hover:bg-primary-hover p-3 rounded-full relative transition-all hover:scale-105 shadow-lg"
             >
               <ShoppingCart className="h-5 w-5" />
               {getItemCount() > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
+                <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
                   {getItemCount()}
                 </span>
               )}
@@ -86,7 +86,7 @@ export const Header = ({ onSearchChange, onCartClick, onMenuClick }: HeaderProps
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Buscar productos..."
+                placeholder="Buscar zapatillas..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className="search-input w-full pl-10"

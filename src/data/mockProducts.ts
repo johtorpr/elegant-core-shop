@@ -1,0 +1,126 @@
+import { Product } from '@/types';
+
+export const mockProducts: Product[] = [
+  {
+    id: '1',
+    name: 'iPhone 15 Pro',
+    brand: 'Apple',
+    category: 'Smartphones',
+    type: 'Teléfonos',
+    price: 999,
+    originalPrice: 1099,
+    discount: 9,
+    image: '/api/placeholder/400/400',
+    images: ['/api/placeholder/400/400', '/api/placeholder/400/400'],
+    description: 'El iPhone 15 Pro con chip A17 Pro, cámara principal de 48MP y diseño en titanio.',
+    availability: 'in-stock',
+    stock: 15,
+    rating: 4.8,
+    reviews: 234
+  },
+  {
+    id: '2',
+    name: 'MacBook Air M3',
+    brand: 'Apple',
+    category: 'Laptops',
+    type: 'Computadoras',
+    price: 1299,
+    image: '/api/placeholder/400/400',
+    description: 'MacBook Air de 13 pulgadas con chip M3, hasta 18 horas de batería.',
+    availability: 'in-stock',
+    stock: 8,
+    rating: 4.9,
+    reviews: 156
+  },
+  {
+    id: '3',
+    name: 'Samsung Galaxy S24',
+    brand: 'Samsung',
+    category: 'Smartphones',
+    type: 'Teléfonos',
+    price: 849,
+    originalPrice: 899,
+    discount: 6,
+    image: '/api/placeholder/400/400',
+    description: 'Galaxy S24 con IA integrada, cámara de 50MP y pantalla Dynamic AMOLED 2X.',
+    availability: 'in-stock',
+    stock: 22,
+    rating: 4.6,
+    reviews: 189
+  },
+  {
+    id: '4',
+    name: 'Dell XPS 13',
+    brand: 'Dell',
+    category: 'Laptops',
+    type: 'Computadoras',
+    price: 1199,
+    image: '/api/placeholder/400/400',
+    description: 'Ultrabook premium con Intel Core i7, pantalla InfinityEdge y diseño compacto.',
+    availability: 'limited',
+    stock: 3,
+    rating: 4.5,
+    reviews: 97
+  },
+  {
+    id: '5',
+    name: 'Sony WH-1000XM5',
+    brand: 'Sony',
+    category: 'Audio',
+    type: 'Auriculares',
+    price: 349,
+    originalPrice: 399,
+    discount: 13,
+    image: '/api/placeholder/400/400',
+    description: 'Auriculares inalámbricos con cancelación de ruido líder en la industria.',
+    availability: 'in-stock',
+    stock: 45,
+    rating: 4.7,
+    reviews: 312
+  },
+  {
+    id: '6',
+    name: 'iPad Pro 12.9"',
+    brand: 'Apple',
+    category: 'Tablets',
+    type: 'Tablets',
+    price: 1099,
+    image: '/api/placeholder/400/400',
+    description: 'iPad Pro con chip M2, pantalla Liquid Retina XDR y compatibilidad con Apple Pencil.',
+    availability: 'in-stock',
+    stock: 12,
+    rating: 4.8,
+    reviews: 201
+  },
+  {
+    id: '7',
+    name: 'Logitech MX Master 3S',
+    brand: 'Logitech',
+    category: 'Accesorios',
+    type: 'Mouse',
+    price: 99,
+    image: '/api/placeholder/400/400',
+    description: 'Mouse inalámbrico de precisión con sensor de 8000 DPI y scroll electromagnético.',
+    availability: 'in-stock',
+    stock: 67,
+    rating: 4.6,
+    reviews: 428
+  },
+  {
+    id: '8',
+    name: 'Nintendo Switch OLED',
+    brand: 'Nintendo',
+    category: 'Gaming',
+    type: 'Consolas',
+    price: 349,
+    image: '/api/placeholder/400/400',
+    description: 'Consola híbrida con pantalla OLED de 7 pulgadas y audio mejorado.',
+    availability: 'out-of-stock',
+    stock: 0,
+    rating: 4.5,
+    reviews: 167
+  }
+];
+
+export const categories = Array.from(new Set(mockProducts.map(p => p.category)));
+export const brands = Array.from(new Set(mockProducts.map(p => p.brand)));

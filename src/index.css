@@ -161,6 +161,11 @@
   .search-input {
     @apply bg-input border border-input-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200;
   }
+
+  /* Input fields */
+  .input-field {
+    @apply px-3 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+  }
   
   /* Cart Components */
   .cart-item {

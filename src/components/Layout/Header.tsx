@@ -60,9 +60,30 @@ export const Header = ({ onSearchChange, onCartClick, onMenuClick }: HeaderProps
             </button>
 
             {/* User Account */}
-            <button className="btn-ghost p-2">
-              <User className="h-5 w-5" />
-            </button>
+            <div className="relative group">
+              <button className="btn-ghost p-2 hover:bg-primary/10">
+                <User className="h-5 w-5" />
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <a href="/admin" className="block px-4 py-2 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                    Panel Admin
+                  </a>
+                  <a href="/profile" className="block px-4 py-2 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                    Mi Perfil
+                  </a>
+                  <a href="/orders" className="block px-4 py-2 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                    Mis Pedidos
+                  </a>
+                  <hr className="my-1 border-border" />
+                  <a href="/login" className="block px-4 py-2 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                    Iniciar Sesión
+                  </a>
+                </div>
+              </div>
+            </div>
 
             {/* Cart */}
             <button

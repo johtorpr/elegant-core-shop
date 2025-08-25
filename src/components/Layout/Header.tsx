@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, ShoppingCart, Menu, X, User } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, User, Phone } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 
 interface HeaderProps {
@@ -51,6 +51,14 @@ export const Header = ({ onSearchChange, onCartClick, onMenuClick }: HeaderProps
 
           {/* Actions */}
           <div className="flex items-center space-x-2">
+            {/* Contact Button */}
+            <a
+              href="tel:+34912345678"
+              className="hidden sm:flex btn-ghost items-center gap-2 text-sm"
+            >
+              <Phone className="h-4 w-4" />
+              Contacto
+            </a>
             {/* Mobile Search Toggle */}
             <button
               onClick={() => setIsSearchExpanded(!isSearchExpanded)}

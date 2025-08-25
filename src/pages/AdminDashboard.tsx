@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Package, Users, ShoppingCart, TrendingUp, Plus } from 'lucide-react';
+import { Header } from '@/components/Layout/Header';
+import { Footer } from '@/components/Layout/Footer';
 import { CategoryManager } from '@/components/Admin/CategoryManager';
 import { useCategories } from '@/hooks/useCategories';
 
@@ -47,6 +49,12 @@ export const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Header */}
+      <Header
+        onSearchChange={() => {}}
+        onCartClick={() => {}}
+        onMenuClick={() => {}}
+      />
       <div className="container-responsive py-6">
         {/* Header */}
         <div className="mb-8">
@@ -172,6 +180,9 @@ export const AdminDashboard = () => {
           )}
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
